@@ -40,7 +40,27 @@ class Voting:
         print(f"Party: {party['party']}")
         print(f"Total Votes: {party['total']} out of {self.totalVote}")
         print('===============================')
+    def showIngrapgh(self):
+        import matplotlib.pyplot as plt
 
+        fig, ax = plt.subplots()
+        party = []
+        counts = []
+        bar_labels = []
+        for item in self.candidateList:
+            party.append(item['party'])
+            counts.append(item['total'])
+        
+        bar_labels = party
+        bar_colors = ['tab:orange', 'tab:green']
+
+        ax.bar(party, counts, label=bar_labels, color=bar_colors)
+
+        ax.set_ylabel('Votes each Party Got')
+        ax.set_title('Election results of 2024')
+        ax.legend(title='Election results')
+
+        plt.show()
 
 candidateList = [
     {"name": "prabhu", "party": "BJP", "total": 0},
@@ -58,10 +78,19 @@ votersInLine = [
     {"name": "yz", "age": 20, "votingFor": "Congress"},
     {"name": "abcd", "age": 20, "votingFor": "BJP"},
     {"name": "yz", "age": 20, "votingFor": "Congress"},
-    {"name": "yz", "age": 20, "votingFor": "BJP"}
+    {"name": "yz", "age": 20, "votingFor": "BJP"},
+     {"name": "yz", "age": 20, "votingFor": "Congress"},
+      {"name": "yz", "age": 20, "votingFor": "Congress"},
+       {"name": "yz", "age": 20, "votingFor": "Congress"},
+        {"name": "yz", "age": 20, "votingFor": "Congress"},
+     {"name": "yz", "age": 20, "votingFor": "BJP"},
+      {"name": "yz", "age": 20, "votingFor": "BJP"},
+       {"name": "yz", "age": 20, "votingFor": "BJP"},
+        {"name": "yz", "age": 20, "votingFor": "BJP"},
 ]
 
 for item in votersInLine:
     v.startVoting(item)
 
 v.showVictory()
+v.showIngrapgh()
