@@ -56,6 +56,15 @@ class LinkList:
           
          else:
             print("no data")
+    def find_middle(self):
+       
+        slow = self.head
+        fast = self.head
+        while(fast and fast.next):
+            slow = slow.next
+            fast = fast.next.next
+           
+        print(slow.data)
         
        
        
@@ -67,9 +76,13 @@ link.append(1)
 link.append(2)
 link.append(3)
 link.append(4)
+link.append(5)
+link.append(6)
+link.find_middle()
 link.display_nodes()
 link.delete_list(1)
 link.display_nodes()
-# link.display_last_node()
-# link.display_node()
-# link.check_item_existance(3)
+
+link.display_last_node()
+
+link.check_item_existance(3)
