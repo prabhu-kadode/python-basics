@@ -31,12 +31,35 @@ class ReverseLink:
             current = nextnode
         
         self.head = previous
+    def countNodes(self):
+        count = 0
+        current = self.head
+        while(current):
+            count+=1
+            current = current.next
+        print('total count',count)
+        return count
+    def displayNth(self,n):
+
+        count = self.countNodes()
+        if n > count:
+            print("not possible")
+            return 
+        node = count - n
+        temp = self.head
+        print(node)
+        for i in range(1,node+1):
+            temp =temp.next
+            print("sss",i)
+        print(temp.data)
+       
 
 
 re = ReverseLink()
-re.append(10)
-re.append(20)
-re.append(30)
+for i in range(1,6):
+  re.append(i)
 re.display()
 re.reverse()
 re.display()
+re.countNodes()
+re.displayNth(4)

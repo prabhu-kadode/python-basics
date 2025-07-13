@@ -46,6 +46,6 @@ for index, item in enumerate(ITEM_DATA):
     item.update({"id":index + ITEM_ID_START_POINT})
     store.add_item(item)
 store.show_all()
-store.filter_item('boalt')
+store.filter_item('silicon pockets')
 
 
