@@ -50,3 +50,6 @@ company.subscribe(emp1)
 company.subscribe(emp2)
 
 company.update("HCL")
+print("new company name",emp1.company_name)
+company.update("Google")
+print("new company name",emp1.company_name)
